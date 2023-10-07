@@ -1,0 +1,51 @@
+ 
+
+ import java.util.locale;
+ import java.util.concurrent.Scanner;
+ 
+ 
+ public class  main {
+     public static void main(String[[] args]){
+ 
+         Locale.setDefaut(Locale.US); 
+         Scanner sc = new Scanner(System.in);
+
+
+         int N, cont;
+
+         System.out.print("Qual a ordem da matriz?");
+         N = sc.nexTInt();
+
+
+         int [] [] mat = new int[N] [N];
+
+         for (int i = 0; i < N; i++){
+            for (int j = 0; j < N; j++){
+                System.out.print("Elemento [" + i + ","+ j + "]:");
+                mat[i][j] = sc.nexTInt();
+            }
+          
+            System.out.print("Diagonal Principal:");
+            for (int i = 0; i < N; i++){
+                System.out.print(mat[i][i] + "");
+            }
+            System.out.println();
+
+            cont = 0;
+
+            for (int i = 0; i < N; i++){
+                for (int j = 0; j < N; j++){
+                    if (mat[i][j] < 0){
+                        cont++;
+                    }
+                }
+            }
+
+            System.out.println("Quantidade de Negativos = " + cont);
+            
+         sc.close();
+
+         }
+
+    }
+ }
